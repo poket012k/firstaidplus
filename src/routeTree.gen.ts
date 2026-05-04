@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as QuizzesRouteImport } from './routes/quizzes'
 import { Route as LessonsRouteImport } from './routes/lessons'
+import { Route as EmergencyRouteImport } from './routes/emergency'
 import { Route as DrillsRouteImport } from './routes/drills'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LessonsSlugRouteImport } from './routes/lessons.$slug'
@@ -23,6 +24,11 @@ const QuizzesRoute = QuizzesRouteImport.update({
 const LessonsRoute = LessonsRouteImport.update({
   id: '/lessons',
   path: '/lessons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmergencyRoute = EmergencyRouteImport.update({
+  id: '/emergency',
+  path: '/emergency',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DrillsRoute = DrillsRouteImport.update({
@@ -44,6 +50,7 @@ const LessonsSlugRoute = LessonsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/drills': typeof DrillsRoute
+  '/emergency': typeof EmergencyRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/quizzes': typeof QuizzesRoute
   '/lessons/$slug': typeof LessonsSlugRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/drills': typeof DrillsRoute
+  '/emergency': typeof EmergencyRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/quizzes': typeof QuizzesRoute
   '/lessons/$slug': typeof LessonsSlugRoute
@@ -59,21 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/drills': typeof DrillsRoute
+  '/emergency': typeof EmergencyRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/quizzes': typeof QuizzesRoute
   '/lessons/$slug': typeof LessonsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/drills' | '/lessons' | '/quizzes' | '/lessons/$slug'
+  fullPaths:
+    | '/'
+    | '/drills'
+    | '/emergency'
+    | '/lessons'
+    | '/quizzes'
+    | '/lessons/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/drills' | '/lessons' | '/quizzes' | '/lessons/$slug'
-  id: '__root__' | '/' | '/drills' | '/lessons' | '/quizzes' | '/lessons/$slug'
+  to:
+    | '/'
+    | '/drills'
+    | '/emergency'
+    | '/lessons'
+    | '/quizzes'
+    | '/lessons/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/drills'
+    | '/emergency'
+    | '/lessons'
+    | '/quizzes'
+    | '/lessons/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DrillsRoute: typeof DrillsRoute
+  EmergencyRoute: typeof EmergencyRoute
   LessonsRoute: typeof LessonsRouteWithChildren
   QuizzesRoute: typeof QuizzesRoute
 }
@@ -92,6 +121,13 @@ declare module '@tanstack/react-router' {
       path: '/lessons'
       fullPath: '/lessons'
       preLoaderRoute: typeof LessonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/emergency': {
+      id: '/emergency'
+      path: '/emergency'
+      fullPath: '/emergency'
+      preLoaderRoute: typeof EmergencyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/drills': {
@@ -132,6 +168,7 @@ const LessonsRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DrillsRoute: DrillsRoute,
+  EmergencyRoute: EmergencyRoute,
   LessonsRoute: LessonsRouteWithChildren,
   QuizzesRoute: QuizzesRoute,
 }
