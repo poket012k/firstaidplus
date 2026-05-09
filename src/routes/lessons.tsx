@@ -17,8 +17,7 @@ function LessonsPage() {
   const { completed } = useProgress();
 
   function isUnlocked(index: number) {
-    if (index === 0) return true;
-    return completed.includes(lessonCategories[index - 1].slug);
+    return true;
   }
 
   return (
