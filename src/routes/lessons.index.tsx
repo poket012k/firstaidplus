@@ -3,7 +3,7 @@ import { ArrowLeft, CheckCircle2, Lock } from "lucide-react";
 import { lessonCategories } from "@/data/lessons";
 import { useProgress } from "@/hooks/use-progress";
 
-export const Route = createFileRoute("/lessons")({
+export const Route = createFileRoute("/lessons/")({
   head: () => ({
     meta: [
       { title: "First Aid Lessons — Levels 1 to 13" },
