@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate, notFound } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle2, XCircle } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { lessonCategories } from "@/data/lessons";
 import { useProgress } from "@/hooks/use-progress";
 
@@ -22,7 +22,15 @@ function LessonDetail() {
   const [answers, setAnswers] = useState<number[]>([]);
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    setShowQuiz(false);
+    setAnswers([]);
+    setSubmitted(false);
+  }, [slug]);
+
   if (!lesson) throw notFound();
+
+  const nextLesson = lessonCategories.find((c) => c.level === lesson.level + 1);
 
   const score = lesson.quiz.reduce(
     (acc, q, i) => acc + (answers[i] === q.answer ? 1 : 0),
@@ -59,6 +67,25 @@ function LessonDetail() {
             <h1 className="text-2xl font-extrabold text-foreground sm:text-3xl">{lesson.title}</h1>
           </div>
         </div>
+
+        {!showQuiz && (
+          <div className="mb-6 grid gap-3 sm:grid-cols-2">
+            <button
+              onClick={() => setShowQuiz(true)}
+              className="rounded-xl bg-gradient-primary px-6 py-3 font-bold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
+            >
+              {isCompleted(lesson.slug) ? "Retake assignment" : "Start assignment"}
+            </button>
+            {isCompleted(lesson.slug) && nextLesson && (
+              <button
+                onClick={() => navigate({ to: "/lessons/$slug", params: { slug: nextLesson.slug } })}
+                className="rounded-xl border border-border bg-card px-6 py-3 font-bold text-foreground shadow-card transition-transform hover:-translate-y-0.5"
+              >
+                Continue to Level {nextLesson.level}
+              </button>
+            )}
+          </div>
+        )}
 
         {!showQuiz && (
           <article className="space-y-6 rounded-2xl bg-card p-6 shadow-card">
@@ -165,19 +192,28 @@ function LessonDetail() {
                 <div className={`rounded-xl p-4 text-center font-bold ${passed ? "bg-success/15 text-success" : "bg-destructive/10 text-destructive"}`}>
                   Score: {score} / {lesson.quiz.length} ({percent}%) {passed ? "— Passed! Next level unlocked." : `— need ${passingScore} correct (40%) to pass. Try again.`}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-col gap-2 sm:flex-row">
                   <button
                     onClick={() => { setSubmitted(false); setAnswers([]); }}
                     className="flex-1 rounded-xl border border-border bg-card px-4 py-2 font-semibold text-foreground"
                   >
                     Retry
                   </button>
-                  <button
-                    onClick={() => navigate({ to: "/lessons" })}
-                    className="flex-1 rounded-xl bg-gradient-primary px-4 py-2 font-semibold text-primary-foreground"
-                  >
-                    Back to lessons
-                  </button>
+                  {passed && nextLesson ? (
+                    <button
+                      onClick={() => navigate({ to: "/lessons/$slug", params: { slug: nextLesson.slug } })}
+                      className="flex-1 rounded-xl bg-gradient-primary px-4 py-2 font-semibold text-primary-foreground"
+                    >
+                      Continue to Level {nextLesson.level}
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => navigate({ to: "/lessons" })}
+                      className="flex-1 rounded-xl bg-gradient-primary px-4 py-2 font-semibold text-primary-foreground"
+                    >
+                      Back to lessons
+                    </button>
+                  )}
                 </div>
               </div>
             )}
