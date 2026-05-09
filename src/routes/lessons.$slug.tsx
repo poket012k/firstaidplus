@@ -101,6 +101,21 @@ function LessonDetail() {
                     </li>
                   ))}
                 </ul>
+                {s.image && (
+                  <figure className="mt-4 overflow-hidden rounded-xl border border-border bg-muted/30">
+                    <img
+                      src={s.image.src}
+                      alt={s.image.caption ?? s.heading}
+                      loading="lazy"
+                      className="mx-auto block max-h-[520px] w-full object-contain bg-white"
+                    />
+                    {s.image.caption && (
+                      <figcaption className="px-4 py-2 text-xs italic text-muted-foreground">
+                        {s.image.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
               </section>
             ))}
 
