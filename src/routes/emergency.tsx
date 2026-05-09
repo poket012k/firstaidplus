@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Phone, Siren } from "lucide-react";
+import { EmergencyAIAssistant } from "@/components/EmergencyAIAssistant";
 
 export const Route = createFileRoute("/emergency")({
   head: () => ({
@@ -55,6 +56,10 @@ function EmergencyPage() {
         >
           <Phone className="h-6 w-6" /> Call Emergency Services
         </a>
+
+        <div className="mb-6">
+          <EmergencyAIAssistant />
+        </div>
 
         <div className="space-y-4">
           {guides.map((g) => (
