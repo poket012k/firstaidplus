@@ -28,11 +28,14 @@ function LessonDetail() {
     (acc, q, i) => acc + (answers[i] === q.answer ? 1 : 0),
     0,
   );
-  const passed = submitted && score === lesson.quiz.length;
+  const passingScore = Math.ceil(lesson.quiz.length * 0.4);
+  const percent = Math.round((score / lesson.quiz.length) * 100);
+  const passed = submitted && score >= passingScore;
 
   function handleSubmit() {
     setSubmitted(true);
-    if (lesson && answers.length === lesson.quiz.length && answers.every((a, i) => a === lesson.quiz[i].answer)) {
+    const s = lesson.quiz.reduce((a, q, i) => a + (answers[i] === q.answer ? 1 : 0), 0);
+    if (s >= Math.ceil(lesson.quiz.length * 0.4)) {
       complete(lesson.slug);
     }
   }
@@ -107,7 +110,9 @@ function LessonDetail() {
         {showQuiz && (
           <div className="space-y-4 rounded-2xl bg-card p-6 shadow-card">
             <h2 className="text-xl font-bold text-foreground">Assignment</h2>
-            <p className="text-sm text-muted-foreground">Answer all questions correctly to unlock the next level.</p>
+            <p className="text-sm text-muted-foreground">
+              Score at least 40% ({passingScore} of {lesson.quiz.length}) to pass and unlock the next level.
+            </p>
 
             {lesson.quiz.map((q, qi) => (
               <div key={qi} className="rounded-xl border border-border p-4">
@@ -157,7 +162,7 @@ function LessonDetail() {
             ) : (
               <div className="space-y-3">
                 <div className={`rounded-xl p-4 text-center font-bold ${passed ? "bg-success/15 text-success" : "bg-destructive/10 text-destructive"}`}>
-                  Score: {score} / {lesson.quiz.length} {passed ? "— Level unlocked!" : "— try again to unlock the next level."}
+                  Score: {score} / {lesson.quiz.length} ({percent}%) {passed ? "— Passed! Next level unlocked." : `— need ${passingScore} correct (40%) to pass. Try again.`}
                 </div>
                 <div className="flex gap-2">
                   <button
