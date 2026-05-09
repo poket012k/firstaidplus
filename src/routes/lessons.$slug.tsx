@@ -34,6 +34,7 @@ function LessonDetail() {
 
   function handleSubmit() {
     setSubmitted(true);
+    if (!lesson) return;
     const s = lesson.quiz.reduce((a, q, i) => a + (answers[i] === q.answer ? 1 : 0), 0);
     if (s >= Math.ceil(lesson.quiz.length * 0.4)) {
       complete(lesson.slug);
