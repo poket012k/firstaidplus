@@ -1,10 +1,16 @@
+export type LessonSection = {
+  heading: string;
+  body: string[];
+  image?: { src: string; caption?: string };
+};
+
 export type LessonCategory = {
   slug: string;
   title: string;
   level: number;
   icon: string;
   summary: string;
-  sections: { heading: string; body: string[] }[];
+  sections: LessonSection[];
   sources?: { label: string; url: string }[];
   quiz: {
     question: string;
@@ -12,6 +18,14 @@ export type LessonCategory = {
     answer: number;
   }[];
 };
+
+import skeletonImg from "@/assets/anatomy-skeleton.jpg";
+import ribcageImg from "@/assets/anatomy-ribcage.jpg";
+import upperLimbsImg from "@/assets/anatomy-upper-limbs.jpg";
+import lowerLimbsImg from "@/assets/anatomy-lower-limbs.jpg";
+import heartImg from "@/assets/anatomy-heart.jpg";
+import respiratoryImg from "@/assets/anatomy-respiratory.jpg";
+import lungsImg from "@/assets/anatomy-lungs.jpg";
 
 export const lessonCategories: LessonCategory[] = [
   {
