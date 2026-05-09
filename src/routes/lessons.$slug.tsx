@@ -73,6 +73,28 @@ function LessonDetail() {
               </section>
             ))}
 
+            {lesson.sources && lesson.sources.length > 0 && (
+              <section className="rounded-xl border border-border bg-muted/40 p-4">
+                <h2 className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+                  Certified sources
+                </h2>
+                <ul className="space-y-1 text-sm">
+                  {lesson.sources.map((s) => (
+                    <li key={s.url}>
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary underline-offset-2 hover:underline"
+                      >
+                        {s.label} ↗
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             <button
               onClick={() => setShowQuiz(true)}
               className="w-full rounded-xl bg-gradient-primary px-6 py-3 font-bold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
