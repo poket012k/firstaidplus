@@ -15,6 +15,7 @@ import { Route as EmergencyRouteImport } from './routes/emergency'
 import { Route as DrillsRouteImport } from './routes/drills'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LessonsSlugRouteImport } from './routes/lessons.$slug'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const QuizzesRoute = QuizzesRouteImport.update({
   id: '/quizzes',
@@ -46,6 +47,11 @@ const LessonsSlugRoute = LessonsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => LessonsRoute,
 } as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/emergency': typeof EmergencyRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/quizzes': typeof QuizzesRoute
+  '/api/chat': typeof ApiChatRoute
   '/lessons/$slug': typeof LessonsSlugRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/emergency': typeof EmergencyRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/quizzes': typeof QuizzesRoute
+  '/api/chat': typeof ApiChatRoute
   '/lessons/$slug': typeof LessonsSlugRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/emergency': typeof EmergencyRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/quizzes': typeof QuizzesRoute
+  '/api/chat': typeof ApiChatRoute
   '/lessons/$slug': typeof LessonsSlugRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/emergency'
     | '/lessons'
     | '/quizzes'
+    | '/api/chat'
     | '/lessons/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/emergency'
     | '/lessons'
     | '/quizzes'
+    | '/api/chat'
     | '/lessons/$slug'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/emergency'
     | '/lessons'
     | '/quizzes'
+    | '/api/chat'
     | '/lessons/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   EmergencyRoute: typeof EmergencyRoute
   LessonsRoute: typeof LessonsRouteWithChildren
   QuizzesRoute: typeof QuizzesRoute
+  ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LessonsSlugRouteImport
       parentRoute: typeof LessonsRoute
     }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -171,6 +191,7 @@ const rootRouteChildren: RootRouteChildren = {
   EmergencyRoute: EmergencyRoute,
   LessonsRoute: LessonsRouteWithChildren,
   QuizzesRoute: QuizzesRoute,
+  ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
