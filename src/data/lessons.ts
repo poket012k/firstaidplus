@@ -23,39 +23,128 @@ export const lessonCategories: LessonCategory[] = [
       "Know every medicine and piece of equipment in a standard BSMM first aid kit — what it looks like, how it is used, and when to reach for it.",
     sections: [
       {
-        heading: "Cleansing & antiseptic medicines",
+        heading: "1. Dettol Solution",
         body: [
-          "Dettol Solution — must be diluted with water before use (turns white when mixed); external use only. Cleans wounds, cuts, bites and insect stings, and eliminates germs.",
-          "Alcohol Swab — laminated paper sachet that smells of alcohol and stings sharply on contact. A convenient substitute for Dettol that kills germs and bacteria effectively.",
-          "Saline Solution — clear, ready-to-use, very painful on open wounds. Use only when there is heavy debris on a wound to flush it out and clean it; can substitute for Dettol.",
-          "Yellow Solution — brownish-yellow liquid normally applied AFTER Dettol. Eliminates germs, cleans the wound, protects it and prevents further damage.",
+          "Characteristics: must be diluted with water before use; turns white once mixed with water; for EXTERNAL use only.",
+          "Uses: cleans wounds, cuts, animal bites and insect stings by washing away dirt and bacteria from the surface of the skin.",
+          "Eliminates germs around the injury so the wound can begin to heal without becoming infected.",
+          "How to use: pour the diluted solution onto sterilised gauze or cotton, then gently dab (do not scrub) the wound from the centre outwards.",
         ],
       },
       {
-        heading: "Creams & topical treatments",
+        heading: "2. Alcohol Swab",
         body: [
-          "Antiseptic Cream — white cream that forms a protective coat over wounds, cuts, burns and fungal infections. Apply on a piece of gauze and reapply every 4–5 hours.",
-          "Mopiko — white cream that relieves itching and pain caused by insect bites such as mosquito bites.",
-          "Perskindol Spray (PR Spray) — produces a cool feeling when sprayed on a muscle injury and gives temporary pain relief, commonly used for sprains and strains so an athlete can keep moving. It is only a pain reliever, not a cure, so it is not generally recommended.",
-          "Counterpain Cream — cream version of PR spray. Temporarily relieves muscle aches and rheumatic pains. External use only; avoid water contact for at least one hour after applying.",
+          "Characteristics: small sachet laminated in paper (similar to a plaster wrapper); strong alcohol smell; stings sharply on contact with broken skin.",
+          "Uses: a quick substitute for Dettol Solution when you need to clean a small area fast — e.g. before applying a plaster.",
+          "Kills germs and bacteria effectively on the skin's surface, including around minor cuts and grazes.",
+          "Also useful to wipe down tools (scissors, forceps) before using them on a casualty.",
         ],
       },
       {
-        heading: "Other medicines",
+        heading: "3. Saline Solution",
         body: [
-          "Eye Mo — colourless eye drops that ease minor eye irritation. Record the date of first use on the bottle or box; discard 30 days after opening.",
-          "Medicated Oil — transparent oil used to relieve giddiness, headache, blocked nose, cold and stomach ache.",
-          "Plaster — soft, breathable adhesive strip with strong adhesion and elasticity. Covers small cuts to prevent infection.",
+          "Characteristics: clear, colourless liquid; does NOT need to be diluted; can be extremely painful when poured onto open wounds.",
+          "Uses: only used when a wound has too much debris (sand, gravel, dirt) that ordinary cleaning cannot remove.",
+          "Flushes out foreign material so the wound can be properly inspected, cleaned and dressed.",
+          "Eliminates germs and acts as a substitute for Dettol Solution when stronger flushing is needed.",
+        ],
+      },
+      {
+        heading: "4. Yellow Solution",
+        body: [
+          "Characteristics: brownish-yellow liquid; normally applied AFTER Dettol Solution, never before.",
+          "Uses: eliminates germs that remain after the wound has been cleaned with Dettol.",
+          "Cleans and protects the wound by forming a thin antiseptic layer over the injured skin.",
+          "Prevents further damage to the wound by reducing the risk of secondary infection while it heals.",
+        ],
+      },
+      {
+        heading: "5. Antiseptic Cream",
+        body: [
+          "Characteristics: white cream that acts as a protection coat over wounds and injuries; needs to be reapplied every 4–5 hours; should be applied on a piece of gauze, not directly with bare fingers.",
+          "Uses: protects wounds, cuts, burns and fungal infections from dirt and bacteria.",
+          "Keeps the area moist so the skin can heal without forming hard scabs that crack and re-open.",
+          "How to use: squeeze a small amount onto sterilised gauze, lay the gauze over the cleaned wound, and secure with micropore tape or a bandage.",
+        ],
+      },
+      {
+        heading: "6. Mopiko",
+        body: [
+          "Characteristics: white cream in a small tube; light medicated smell.",
+          "Uses: relieves itching and pain caused by insect bites such as mosquito, ant or sandfly bites.",
+          "Helps stop the casualty from scratching the bite, which prevents the skin from breaking and getting infected.",
+        ],
+      },
+      {
+        heading: "7. Perskindol Spray (PR Spray)",
+        body: [
+          "Characteristics: aerosol spray that produces a cool feeling when sprayed onto a muscle injury.",
+          "Uses: temporarily relieves pain from sprains and strains, commonly used so athletes can keep moving (e.g. continue a race) after a muscle injury.",
+          "Important: it is only a pain reliever, NOT a cure for the injury. Not generally recommended because it can mask pain and cause the casualty to make the injury worse.",
+          "How to use: shake the can, hold ~15 cm from the skin, spray briefly over the injured muscle. Avoid eyes, open wounds and broken skin.",
+        ],
+      },
+      {
+        heading: "8. Counterpain Cream",
+        body: [
+          "Characteristics: in cream form (the cream version of PR Spray); for EXTERNAL use only; ensure no water contact within an hour of application.",
+          "Uses: temporarily relieves muscle aches and rheumatic pains, e.g. shoulder, neck or back stiffness after exercise.",
+          "How to use: squeeze a small amount onto your gloved fingers, massage gently into the sore muscle until absorbed, then wash hands thoroughly.",
+        ],
+      },
+      {
+        heading: "9. Eye Mo",
+        body: [
+          "Characteristics: colourless solution in a small dropper bottle; the date of first usage MUST be recorded on the bottle or its box; can only be used for 30 days after opening.",
+          "Uses: helps ease off minor irritation of the eye caused by dust, smoke, sweat or chlorine.",
+          "How to use: tilt the casualty's head back, gently pull down the lower eyelid, and squeeze 1–2 drops into the eye. Do NOT touch the dropper to the eye.",
+        ],
+      },
+      {
+        heading: "10. Medicated Oil",
+        body: [
+          "Characteristics: transparent oil with a strong, sharp medicated scent.",
+          "Uses: relieves giddiness, headache, blocked nose, cold symptoms and stomach ache.",
+          "How to use: place a few drops on the palm, rub hands together to warm the oil, then massage onto the temples (for headache/giddiness), under the nose (for blocked nose) or over the abdomen (for stomach ache).",
+        ],
+      },
+      {
+        heading: "11. Plaster",
+        body: [
+          "Characteristics: soft material with excellent adhesive power and elasticity; ventilation holes keep skin breathable and comfortable.",
+          "Uses: covers wounds and prevents infection by sealing out dirt and germs.",
+          "Suitable for small cuts, grazes and blisters where a full bandage is unnecessary.",
+          "How to use: clean and dry the wound first, peel the plaster, place the absorbent pad directly over the wound, and press the adhesive sides down firmly.",
         ],
       },
       {
         heading: "Equipment in the kit",
         body: [
-          "Dressing & cleaning: Cotton Roll, Cotton Bud, Sterilised Gauze, Micropore Surgical Tape, Plaster.",
-          "Injury support: Ice Pack, Splint, Triangular Bandage, Roller Bandage.",
-          "Personal protection: Latex Glove, Face Mask, Pocket Mask / Face Shield (for rescue breaths).",
-          "Tools: Stainless Steel Scissors, Forceps, Safety Pins.",
-          "Records: Notebook and Pencil — to log the casualty's condition, vital signs and treatment given.",
+          "1. Cotton Roll — used with antiseptic to clean around wounds and to pad bandages.",
+          "2. Cotton Bud — for cleaning small or hard-to-reach areas (e.g. between fingers, around the nose).",
+          "3. Sterilised Gauze — sterile pad placed directly on a wound to absorb blood and apply creams. Never reuse.",
+          "4. Micropore Surgical Tape — gentle adhesive paper tape that secures gauze and dressings without irritating the skin.",
+          "5. Plaster — covers small cuts and grazes (see medicine #11 above).",
+          "6. Ice Pack — applied (wrapped in cloth) to sprains, bruises and bumps to reduce swelling and pain. Apply 10–15 minutes at a time.",
+          "7. Splint — rigid support used to immobilise a suspected fracture or dislocation before moving the casualty.",
+          "8. Triangular Bandage — versatile cloth used as a sling for arm injuries, a head dressing, or a broad bandage to secure splints.",
+          "9. Roller Bandage — long stretchable bandage used to hold dressings in place, support sprains and apply pressure to control bleeding.",
+          "10. Latex Glove — worn on both hands to protect the first aider and the casualty from cross-infection. Replace between casualties.",
+          "11. Face Mask — worn over the nose and mouth to reduce the spread of droplets between the first aider and the casualty.",
+          "12. Pocket Mask / Face Shield — placed over the casualty's mouth to give rescue breaths safely without direct mouth-to-mouth contact.",
+          "13. Stainless Steel Scissors — for cutting bandages, tape and clothing away from an injury without snagging the wound.",
+          "14. Forceps — used to remove small foreign objects (splinters, glass, ticks) from a wound.",
+          "15. Safety Pins — secure the ends of triangular and roller bandages so they do not unravel.",
+          "16. Notebook and Pencil — used to record the casualty's condition, vital signs (pulse, breathing, level of response) and treatment given so that the information can be handed over to medical professionals.",
+        ],
+      },
+      {
+        heading: "Kit care & safety reminders",
+        body: [
+          "Check the kit regularly and immediately replace any item that is used, damaged or expired.",
+          "Keep medicines in their original labelled packaging; never mix solutions in unmarked bottles.",
+          "Always wear latex gloves and a face mask when treating a casualty to protect both of you.",
+          "Solutions like Dettol, Saline and Yellow Solution are for EXTERNAL use only — never swallow them.",
         ],
       },
       {
