@@ -4,7 +4,7 @@ import { BookOpen, Brain, Siren, Heart, Plus, Activity } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FirstAid+ — Be Ready to Save a Life" },
+      { title: "First Aid App — Be Ready to Save a Life" },
       { name: "description", content: "Bite-sized first aid lessons, quizzes and emergency guidance — all in one place." },
     ],
   }),
