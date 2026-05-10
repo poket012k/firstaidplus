@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, Brain, Dumbbell, Siren, Heart, Plus, Activity } from "lucide-react";
+import { BookOpen, Brain, Siren, Heart, Plus, Activity } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,7 +14,6 @@ export const Route = createFileRoute("/")({
 const tiles = [
   { to: "/lessons", title: "First Aid Lessons", desc: "13 levels — from kits to CPR.", icon: BookOpen, gradient: "bg-gradient-primary" },
   { to: "/quizzes", title: "First Aid Quizzes", desc: "Test your knowledge.", icon: Brain, gradient: "bg-gradient-secondary" },
-  { to: "/drills", title: "First Aid Drills", desc: "Practice scenarios.", icon: Dumbbell, gradient: "bg-gradient-accent" },
   { to: "/emergency", title: "Emergency Guidance", desc: "Quick steps when seconds matter.", icon: Siren, gradient: "bg-gradient-emergency" },
 ] as const;
 

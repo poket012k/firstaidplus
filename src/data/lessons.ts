@@ -26,6 +26,18 @@ import lowerLimbsImg from "@/assets/anatomy-lower-limbs.jpg";
 import heartImg from "@/assets/anatomy-heart.jpg";
 import respiratoryImg from "@/assets/anatomy-respiratory.jpg";
 import lungsImg from "@/assets/anatomy-lungs.jpg";
+import cradleImg from "@/assets/manlift-cradle.jpg";
+import piggybackImg from "@/assets/manlift-piggyback.jpg";
+import humanCrutchImg from "@/assets/manlift-human-crutch.jpg";
+import firemanCarryImg from "@/assets/manlift-fireman-carry.jpg";
+import firemanDragImg from "@/assets/manlift-fireman-drag.jpg";
+import neckDragImg from "@/assets/manlift-neck-drag.jpg";
+import twoHandedSeatImg from "@/assets/manlift-two-handed-seat.jpg";
+import handedSeatsImg from "@/assets/manlift-handed-seats.jpg";
+import kitchenChairImg from "@/assets/manlift-kitchen-chair.jpg";
+import stretcherImg from "@/assets/manlift-stretcher.jpg";
+import logrollImg from "@/assets/manlift-logroll.jpg";
+import spinalStandingImg from "@/assets/manlift-spinal-standing.jpg";
 
 export const lessonCategories: LessonCategory[] = [
   {
