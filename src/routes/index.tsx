@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, Brain, Siren, Heart, Plus, Activity } from "lucide-react";
+import logo from "@/assets/First Aid Plus Logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
