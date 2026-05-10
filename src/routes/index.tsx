@@ -5,7 +5,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "First Aid App — Be Ready to Save a Life" },
-      { name: "description", content: "Bite-sized first aid lessons, quizzes, drills and emergency guidance — all in one place." },
+      { name: "description", content: "Bite-sized first aid lessons, quizzes and emergency guidance — all in one place." },
     ],
   }),
   component: Index,
