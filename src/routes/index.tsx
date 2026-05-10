@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, Brain, Siren, Heart, Plus, Activity } from "lucide-react";
-import logo from "@faplus";
+import logo from "@/faplus";
 
 export const Route = createFileRoute("/")({
   head: () => ({
