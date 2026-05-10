@@ -38,6 +38,20 @@ import kitchenChairImg from "@/assets/manlift-kitchen-chair.jpg";
 import stretcherImg from "@/assets/manlift-stretcher.jpg";
 import logrollImg from "@/assets/manlift-logroll.jpg";
 import spinalStandingImg from "@/assets/manlift-spinal-standing.jpg";
+import bandageRollerImg from "@/assets/bandage-roller-hand.jpg";
+import bandageTriangularImg from "@/assets/bandage-triangular.jpg";
+import bandageSlingsImg from "@/assets/bandage-slings.jpg";
+import fractureClassImg from "@/assets/fracture-classifications.jpg";
+import fractureUpperImg from "@/assets/fracture-upper-limbs.jpg";
+import woundsTypesImg from "@/assets/wounds-types.jpg";
+import animalDogImg from "@/assets/animal-bite-dog.jpg";
+import animalSnakeImg from "@/assets/animal-snake.jpg";
+import muscleSprainImg from "@/assets/muscle-sprain.jpg";
+import envBurnsImg from "@/assets/env-burns.jpg";
+import traumaHeadImg from "@/assets/trauma-head.jpg";
+import medicalRecoveryImg from "@/assets/medical-recovery.jpg";
+import cprDrcabImg from "@/assets/cpr-drcab.jpg";
+import cprTableImg from "@/assets/cpr-table.jpg";
 
 export const lessonCategories: LessonCategory[] = [
   {
