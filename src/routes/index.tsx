@@ -31,9 +31,11 @@ function Index() {
 
       <main className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center px-6 py-12">
         <header className="mb-10 text-center">
-          <div className="mx-auto mb-4 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-primary shadow-glow">
-            <Plus className="h-12 w-12 text-primary-foreground" strokeWidth={3} />
-          </div>
+          <img
+  src={logo}
+  alt="FirstAid Plus Logo"
+  className="mx-auto mb-4 h-28 w-auto object-contain"
+/>
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
             First Aid App
           </h1>
