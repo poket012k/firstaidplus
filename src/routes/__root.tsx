@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "First Aid App — Lessons, Quizzes & Emergency Help" },
+      { title: "FirstAid+" },
       { name: "description", content: "Learn first aid step-by-step: lessons, quizzes and emergency guidance for everyday and life-threatening situations." },
       { name: "author", content: "First Aid App" },
-      { property: "og:title", content: "First Aid App" },
-      { property: "og:description", content: "Lessons, quizzes and emergency guidance." },
+      { property: "og:title", content: "FirstAid+" },
+      { property: "og:description", content: "Learn first aid step-by-step: lessons, quizzes and emergency guidance for everyday and life-threatening situations." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "FirstAid+" },
+      { name: "twitter:description", content: "Learn first aid step-by-step: lessons, quizzes and emergency guidance for everyday and life-threatening situations." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e8da54c-937a-460f-9b6f-c72674a9552e/id-preview-8e96ebd7--631eda34-ea50-4cc2-b29d-d10265538050.lovable.app-1778378989928.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e8da54c-937a-460f-9b6f-c72674a9552e/id-preview-8e96ebd7--631eda34-ea50-4cc2-b29d-d10265538050.lovable.app-1778378989928.png" },
     ],
     links: [
       {
