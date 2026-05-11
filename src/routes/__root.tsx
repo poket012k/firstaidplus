@@ -31,7 +31,7 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "FirstAid+" },
       { name: "description", content: "Learn first aid step-by-step: lessons, quizzes and emergency guidance for everyday and life-threatening situations." },
-      { name: "author", content: "First Aid App" },
+      { name: "author", content: "FirstAid+" },
       { property: "og:title", content: "FirstAid+" },
       { property: "og:description", content: "Learn first aid step-by-step: lessons, quizzes and emergency guidance for everyday and life-threatening situations." },
       { property: "og:type", content: "website" },
