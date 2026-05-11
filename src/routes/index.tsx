@@ -35,7 +35,7 @@ function Index() {
           <img
             src={logoImg}
             alt="FirstAid+ logo"
-            className="mx-auto mb-4 h-32 w-auto object-contain sm:h-40"
+            className="mx-auto mb-4 h-48 w-auto object-contain sm:h-64"
           />
           <h1 className="sr-only">FirstAid+</h1>
           <p className="mx-auto mt-3 max-w-xl text-base text-muted-foreground sm:text-lg">
