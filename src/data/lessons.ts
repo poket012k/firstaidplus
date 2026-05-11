@@ -16,6 +16,7 @@ export type LessonCategory = {
     question: string;
     options: string[];
     answer: number;
+    difficulty?: "easy" | "medium" | "hard";
   }[];
 };
 

@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, Brain, Siren, Heart, Plus, Activity } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "First Aid App — Be Ready to Save a Life" },
+      { title: "FirstAid+ — Be Ready to Save a Life" },
       { name: "description", content: "Bite-sized first aid lessons, quizzes and emergency guidance — all in one place." },
     ],
   }),
@@ -31,12 +32,12 @@ function Index() {
 
       <main className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center px-6 py-12">
         <header className="mb-10 text-center">
-          <div className="mx-auto mb-4 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-primary shadow-glow">
-            <Plus className="h-12 w-12 text-primary-foreground" strokeWidth={3} />
-          </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            First Aid App
-          </h1>
+          <img
+            src={logoImg}
+            alt="FirstAid+ logo"
+            className="mx-auto mb-4 h-32 w-auto object-contain sm:h-40"
+          />
+          <h1 className="sr-only">FirstAid+</h1>
           <p className="mx-auto mt-3 max-w-xl text-base text-muted-foreground sm:text-lg">
             Learn it. Practice it. Be ready when it counts.
           </p>
